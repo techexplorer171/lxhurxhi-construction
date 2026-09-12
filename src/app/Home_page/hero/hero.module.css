@@ -1,0 +1,210 @@
+.heroSection {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    min-height: 80dvh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #0f172a;
+}
+
+.imageContainer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.imageWrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundImage {
+    object-fit: cover;
+    object-position: center;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+            90deg,
+            rgba(15, 23, 42, 0.95) 0%,
+            rgba(15, 23, 42, 0.8) 50%,
+            rgba(15, 23, 42, 0.5) 100%
+    );
+}
+
+.contentContainer {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.heroCard {
+    max-width: 620px;
+    padding-left: 1.5rem;
+    border-left: 4px solid #f59e0b;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: #f59e0b;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+}
+
+.title {
+    color: #ffffff;
+    font-size: clamp(1.85rem, 4vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.description {
+    color: #cbd5e1;
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.primaryBtn,
+.secondaryBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.primaryBtn {
+    background-color: #f59e0b;
+    color: #0f172a;
+    box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.2);
+}
+
+.primaryBtn:hover {
+    background-color: #d97706;
+}
+
+.secondaryBtn {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #475569;
+}
+
+.secondaryBtn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+}
+
+.dotsContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #475569;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.activeDot {
+    background-color: #f59e0b;
+    width: 24px;
+    border-radius: 5px;
+}
+
+
+@media (max-width: 992px) {
+    .heroSection {
+        min-height: 75vh;
+    }
+
+    .contentContainer {
+        padding: 3rem 1.25rem;
+    }
+}
+
+
+@media (max-width: 640px) {
+    .heroSection {
+        min-height: 85vh;
+        align-items: flex-end;
+    }
+
+    .overlay {
+        background: linear-gradient(
+                180deg,
+                rgba(15, 23, 42, 0.6) 0%,
+                rgba(15, 23, 42, 0.92) 50%,
+                rgba(15, 23, 42, 0.98) 100%
+        );
+    }
+
+    .contentContainer {
+        padding: 2.5rem 1rem;
+    }
+
+    .heroCard {
+        padding-left: 1rem;
+        border-left-width: 3px;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .buttonGroup > div {
+        width: 100%;
+    }
+
+    .primaryBtn,
+    .secondaryBtn {
+        width: 100%;
+        padding: 0.9rem 1rem;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+
+    .activeDot {
+        width: 28px;
+    }
+}

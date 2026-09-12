@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heritage Construction | London</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; background-color: #faf9f6; color: #1c1917; }
+    a, a:visited { text-decoration: none; color: inherit; }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      background-color: #0c1910; /* Deep Regency Green */
+      border-bottom: 1px solid #2d4a34;
+    }
+    .brand {
+      color: #e2d1a6; /* Warm Brass */
+      font-size: 1.25rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a {
+      color: #e2e8f0;
+      font-family: system-ui, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #e2d1a6; }
+    .nav-links .btn-consult {
+      border: 1px solid #e2d1a6;
+      color: #e2d1a6 !important;
+      padding: 0.5rem 1.2rem;
+      transition: all 0.3s;
+    }
+    .nav-links .btn-consult:hover { background-color: #e2d1a6; color: #0c1910 !important; }
+
+    /* Hero */
+    .hero { padding: 6rem 4rem; text-align: center; max-width: 800px; margin: 0 auto; }
+    .hero span { color: #8b7355; font-family: system-ui; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.2em; }
+    .hero h1 { font-size: 2.75rem; font-weight: normal; margin: 1rem 0; line-height: 1.3; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="brand">Kensington & Co.</div>
+  <ul class="nav-links">
+    <li><a href="#">Portfolio</a></li>
+    <li><a href="#">Restoration</a></li>
+    <li><a href="#">Architectural</a></li>
+    <li><a href="#" class="btn-consult">Private Consultation</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <span>London Restoration Specialist</span>
+  <h1>Restoring London’s finest period properties with precision craftsmanship.</h1>
+</section>
+</body>
+</html>
