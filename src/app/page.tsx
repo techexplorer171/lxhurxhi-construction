@@ -6,6 +6,7 @@ import ServicesGrid from './Home_page/ServicesGrid/ServicesGrid'
 import FeaturedProjects from './Home_page/FeaturedProjects/FeaturedProjects'
 import QuoteForm from './Home_page/QuoteForm/QuoteForm'
 import {Federo} from "next/dist/compiled/@next/font/dist/google";
+import Highlights from './Home_page/Highlights/Highlights'
 
 const Home=()=> {
   return (
@@ -13,6 +14,7 @@ const Home=()=> {
       <Navbar/>
         <Hero/>
         <Trust/>
+        <Highlights/>
         <ServicesGrid/>
         <FeaturedProjects/>
         <QuoteForm/>

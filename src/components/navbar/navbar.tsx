@@ -4,7 +4,7 @@ import { useState } from 'react';
 import styles from './navbar.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from './seal.webp';
+import Logo from './final_logo.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);

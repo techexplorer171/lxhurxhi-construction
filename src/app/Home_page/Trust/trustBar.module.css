@@ -1,7 +1,7 @@
 .trustSection {
     width: 100%;
-    background: #0c1910;
-    border-top: 1px solid rgba(245, 158, 11, 0.2);
+    background-color: #15191f; /* Matching dark theme background */
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -21,17 +21,25 @@
     padding: 0.5rem;
 }
 
-.icon {
-    font-size: 1.75rem;
+/* Icon Container - High Contrast Dark & Gold */
+.iconWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 48px;
-    border-radius: 8px;
-    background-color: rgba(245, 158, 11, 0.1);
-    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-radius: 12px;
+    background-color: #f7f5f2; /* Light backdrop so dark PNG icons stand out clearly */
+    border: 1px solid rgba(217, 165, 45, 0.4); /* Accent Gold Border */
     flex-shrink: 0;
+}
+
+/* Forces image icons to render clearly at standard dimensions */
+.iconImage {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: block;
 }
 
 .textWrapper {
@@ -40,19 +48,20 @@
 }
 
 .itemTitle {
-    color: #ffffff;
+    color: #ffffff; /* Crisp white header on dark section */
     font-size: 0.95rem;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 0.2rem;
+    margin: 0 0 0.2rem 0;
 }
 
 .itemSubtitle {
-    color: #cbd5e1;
+    color: #a1a1aa; /* High legibility subtext */
     font-size: 0.825rem;
     margin: 0;
 }
 
+/* Responsive adjustments */
 @media (max-width: 1024px) {
     .container {
         grid-template-columns: repeat(2, 1fr);
@@ -68,9 +77,9 @@
     }
 
     .trustCard {
-        background-color: rgba(255, 255, 255, 0.02);
+        background-color: rgba(255, 255, 255, 0.03);
         padding: 0.85rem;
-        border-radius: 6px;
+        border-radius: 12px;
         border: 1px solid rgba(255, 255, 255, 0.05);
     }
 }
