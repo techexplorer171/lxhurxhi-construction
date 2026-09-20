@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState, useRef } from 'react';
 import styles from './ServicesGrid.module.css';
 import { ChevronLeft, ChevronRight, CheckCircle2, ArrowUpRight } from 'lucide-react';
 
@@ -57,6 +56,13 @@ const services: ServiceItem[] = [
 export default function ServicesGrid() {
     const [activeIndex, setActiveIndex] = useState<number>(0);
 
+    // Touch Tracking State
+    const touchStartX = useRef<number | null>(null);
+    const touchEndX = useRef<number | null>(null);
+
+    // Minimum drag distance required to switch cards (in pixels)
+    const minSwipeDistance = 40;
+
     const handleNext = () => {
         setActiveIndex((prev) => (prev + 1) % services.length);
     };
@@ -65,7 +71,31 @@ export default function ServicesGrid() {
         setActiveIndex((prev) => (prev - 1 + services.length) % services.length);
     };
 
-    // Helper to determine active/adjacent card positions for looping view
+    // Touch Handlers for Mobile Swiping
+    const handleTouchStart = (e: React.TouchEvent) => {
+        touchEndX.current = null;
+        touchStartX.current = e.targetTouches[0].clientX;
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        touchEndX.current = e.targetTouches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+        if (!touchStartX.current || !touchEndX.current) return;
+
+        const distance = touchStartX.current - touchEndX.current;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            handleNext();
+        } else if (isRightSwipe) {
+            handlePrev();
+        }
+    };
+
+    // Helper for card loop positioning
     const getCardPosition = (index: number) => {
         const total = services.length;
         const diff = (index - activeIndex + total) % total;
@@ -80,7 +110,7 @@ export default function ServicesGrid() {
         <section className={styles.section}>
             <div className={styles.container}>
 
-                {/* Improved Smooth Header */}
+                {/* Header */}
                 <div className={styles.headerGroup}>
                     <div className={styles.headerBadge}>
                         <span className={styles.badgeDot} />
@@ -92,9 +122,14 @@ export default function ServicesGrid() {
                     </p>
                 </div>
 
-                {/* Focused 3D Carousel Stage */}
+                {/* Swipeable Carousel Container */}
                 <div className={styles.carouselStage}>
-                    <div className={styles.cardsContainer}>
+                    <div
+                        className={styles.cardsContainer}
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
+                    >
                         {services.map((item, index) => {
                             const positionClass = getCardPosition(index);
 
