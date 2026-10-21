@@ -4,7 +4,12 @@ import whatsapp from './whatsapp-white-removebg.png';
 import Link from 'next/link';
 import Image from 'next/image';
 
-function WhatsAppFloat({ phone, message = 'Hello! I’d like more information.' }) {
+interface WhatsAppFloatProps {
+    phone: string;
+    message?: string;
+}
+
+function WhatsAppFloat({ phone, message = 'Hello! I’d like more information.' }: WhatsAppFloatProps) {
     const link = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
     return (
@@ -15,7 +20,12 @@ function WhatsAppFloat({ phone, message = 'Hello! I’d like more information.' 
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
         >
-            <Image src={whatsapp} alt="WhatsApp chat" />
+            <Image
+                src={whatsapp}
+                alt="WhatsApp chat"
+                width={32}
+                height={32}
+            />
         </Link>
     );
 }
