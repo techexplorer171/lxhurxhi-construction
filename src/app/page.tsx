@@ -7,17 +7,22 @@ import FeaturedProjects from './Home_page/FeaturedProjects/FeaturedProjects'
 import QuoteForm from './Home_page/QuoteForm/QuoteForm'
 import {Federo} from "next/dist/compiled/@next/font/dist/google";
 import Highlights from './Home_page/Highlights/Highlights'
+import QuoteForm2 from './Home_page/QuoteForm/construction_free_quote_form'
+import QuoteForm3 from './Home_page/QuoteForm/QuoteForm'
 
 const Home=()=> {
   return (
     <div >
-      <Navbar/>
+        <Navbar/>
+
         <Hero/>
         <Trust/>
         <Highlights/>
         <ServicesGrid/>
         <FeaturedProjects/>
-        <QuoteForm/>
+
+      <QuoteForm3/>
+
       <Footer/>
 
     </div>

@@ -1,8 +1,6 @@
 .section {
-    width: 100%;
-    padding: 4rem 1.5rem;
-    background-color: #0b1329;
-    color: #ffffff;
+    padding: 6rem 1.5rem;
+    background: #0d0f12; /* Dark background */
 }
 
 .container {
@@ -10,113 +8,156 @@
     margin: 0 auto;
 }
 
+/* Header */
 .header {
-    text-align: center;
-    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+    gap: 2rem;
+}
+
+.eyebrow {
+    display: block;
+    color: #f59e0b;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
 }
 
 .header h2 {
-    font-size: 2rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 800;
     color: #ffffff;
-    margin-bottom: 0.5rem;
+    line-height: 1.15;
 }
 
-.header p {
-    color: #cbd5e1;
-    font-size: 1rem;
+.viewAll {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e2e8f0;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
+.viewAll:hover {
+    color: #f59e0b;
+    border-bottom-color: #f59e0b;
+}
+
+.viewAll span {
+    transition: transform 0.2s;
+}
+
+.viewAll:hover span {
+    transform: translateX(4px);
+}
+
+/* Grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
+    gap: 2rem;
 }
 
+/* Card */
 .card {
-    background-color: #0f172a;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    flex-direction: column;
+    text-decoration: none;
 }
 
-.imagePlaceholder {
+.imageBox {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    background: #1e293b;
+}
+
+.placeholder {
     width: 100%;
-    height: 200px;
-    background-color: #1e293b;
+    height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #64748b;
-    font-size: 0.85rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.95rem;
+    background: linear-gradient(135deg, #1c2025, #334155);
 }
 
-.content {
-    padding: 1.5rem;
+/* Orange Arrow */
+.arrow {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    width: 48px;
+    height: 48px;
+    background: #f59e0b;
+    color: white;
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+    transition: all 0.25s ease;
 }
 
-.location {
-    color: #f59e0b;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
+.card:hover .arrow {
+    transform: scale(1.12);
+    background: #d97706;
 }
 
-.card h3 {
+/* Text under card */
+.info h3 {
     font-size: 1.2rem;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
+    transition: color 0.2s;
 }
 
-.card p {
-    color: #94a3b8;
+.card:hover .info h3 {
+    color: #f59e0b;
+}
+
+.info p {
     font-size: 0.9rem;
-    line-height: 1.5;
+    color: #94a3b8;
     margin: 0;
 }
 
-.ctaWrapper {
-    text-align: center;
-}
-
-.viewAllBtn {
-    display: inline-block;
-    padding: 0.75rem 1.75rem;
-    border: 1px solid #f59e0b;
-    color: #f59e0b;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-}
-
-.viewAllBtn:hover {
-    background-color: #f59e0b;
-    color: #0f172a;
-}
-
+/* Responsive */
 @media (max-width: 900px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
     }
 }
 
 @media (max-width: 600px) {
-    .grid {
-        grid-template-columns: 1fr;
+    .section {
+        padding: 4rem 1.25rem;
     }
 
-    .section {
-        padding: 2.5rem 1rem;
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .placeholder {
+        height: 240px;
     }
 }

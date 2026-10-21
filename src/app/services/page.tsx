@@ -3,181 +3,166 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './service.module.css';
-import Footer from '../../components/footer/footer'
-import Navbar from '../../components/navbar/navbar'
+import Footer from '../../components/footer/footer';
+import Navbar from '../../components/navbar/navbar';
 
 const servicesList = [
     {
         id: 'extensions',
         title: 'Property Extensions',
         badge: 'Popular',
-        tagline: 'Expand your living space and increase property value.',
-        description:
-            'From single-storey rear kitchen extensions to complex multi-level side returns, we manage every structural, brickwork, and interior phase seamlessly.',
-        features: [
-            'Single & Double Storey Extensions',
-            'Rear & Side Return Extensions',
-            'Structural Steel Beam Installations',
-            'Architectural & Planning Compliance',
-        ],
+        description: 'Single & double storey extensions, rear and side returns, structural steel work and full planning compliance.',
+        icon: '🏠',
     },
     {
         id: 'loft-conversions',
         title: 'Loft Conversions',
         badge: 'High ROI',
-        tagline: 'Turn unused roof space into luxury bedrooms or offices.',
-        description:
-            'Unlock hidden square footage in your home. We specialize in dormer, hip-to-gable, and Velux skylight conversions fitted with custom en-suite bathrooms.',
-        features: [
-            'Dormer & Mansard Conversions',
-            'Hip-to-Gable Modifications',
-            'En-suite Bathroom Additions',
-            'Skylights & Rooflight Installation',
-        ],
+        description: 'Dormer, hip-to-gable and mansard conversions with en-suites, skylights and high-quality finishes.',
+        icon: '🏗️',
     },
     {
         id: 'refurbishments',
-        title: 'Full Refurbishments',
+        title: 'Full Home Refurbishments',
         badge: 'Turnkey',
-        tagline: 'Complete internal and external property transformations.',
-        description:
-            'Modernize aged properties with complete structural overhauls, bespoke kitchen fitting, luxury bathroom installations, plastering, and flooring.',
-        features: [
-            'Complete Interior Overhauls',
-            'Kitchen & Bathroom Fitting',
-            'Plastering, Tiling & Decorating',
-            'Flooring & Custom Joinery',
-        ],
+        description: 'Complete internal & external transformations including kitchens, bathrooms, plastering and flooring.',
+        icon: '✨',
     },
     {
         id: 'general-trades',
         title: 'General Building & Trades',
         badge: 'Core Service',
-        tagline: 'Skilled trade solutions for structural and cosmetic updates.',
-        description:
-            'Professional bricklaying, carpentry, structural wall removals, partitioning, and general building repairs handled by fully qualified tradesmen.',
-        features: [
-            'Structural Wall Removal & Load Bearing',
-            'Bricklaying & Masonry Repairs',
-            'First & Second Fix Carpentry',
-            'Paving, Driveways & Retaining Walls',
-        ],
+        description: 'Structural wall removals, brickwork, carpentry, partitioning, driveways and general building works.',
+        icon: '🔨',
     },
     {
         id: 'emergency-repairs',
         title: '24/7 Emergency Repairs',
         badge: '24/7 Support',
-        tagline: 'Around-the-clock rapid response across Greater London.',
-        description:
-            'Urgent structural support, storm damage containment, roof leaks, or severe property issues tackled promptly by our Archway-based team.',
-        features: [
-            'Rapid Site Containment & Safety',
-            'Emergency Roof & Leak Patching',
-            'Structural Shoring & Temporary Support',
-            'Available 24 Hours / 7 Days a Week',
-        ],
+        description: 'Rapid response for structural issues, roof leaks, storm damage and emergency containment across London.',
+        icon: '🚨',
+    },
+    {
+        id: 'project-management',
+        title: 'Project Management',
+        badge: 'End-to-End',
+        description: 'Full project oversight from planning and permissions through to final handover and aftercare.',
+        icon: '📋',
     },
 ];
 
 export default function ServicesPage() {
     return (
         <main className={styles.main}>
-            <Navbar/>
+            <Navbar />
 
+            {/* Hero Section */}
             <section className={styles.heroSection}>
                 <div className={styles.container}>
-                    <motion.span
-                        className={styles.eyebrow}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        Our Expertise
-                    </motion.span>
-                    <motion.h1
-                        className={styles.title}
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                    >
-                        Comprehensive Construction & Building Services
-                    </motion.h1>
-                    <motion.p
-                        className={styles.subtitle}
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                    >
-                        From structural extensions and loft conversions to full property refurbishments,
-                        L Xhurxhi Construction Ltd delivers top-quality craftsmanship across London and nationwide.
-                    </motion.p>
+                    <div className={styles.heroContent}>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <span className={styles.eyebrow}>Our Services</span>
+                            <h1 className={styles.title}>
+                                Construction Solutions by<br />
+                                <span>L Xhurxhi</span>
+                            </h1>
+                            <p className={styles.subtitle}>
+                                High-quality residential extensions, loft conversions and full home refurbishments
+                                delivered with craftsmanship, transparency and reliability across London.
+                            </p>
+                            <div className={styles.heroButtons}>
+                                <Link href="/contact" className={styles.primaryBtn}>
+                                    Get Free Quote
+                                </Link>
+                                <a href="tel:+447393285567" className={styles.secondaryBtn}>
+                                    Call +44 7393 285567
+                                </a>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            className={styles.heroImages}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.7, delay: 0.2 }}
+                        >
+                            <div className={styles.imageGrid}>
+                                <div className={styles.imgBox}></div>
+                                <div className={styles.imgBox}></div>
+                                <div className={styles.imgBox}></div>
+                                <div className={styles.imgBox}></div>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 
-
+            {/* Services Grid */}
             <section className={styles.servicesSection}>
                 <div className={styles.container}>
+                    <div className={styles.sectionHeader}>
+                        <span className={styles.sectionLabel}>What We Offer</span>
+                        <h2>Comprehensive Building Solutions</h2>
+                        <p>
+                            From structural extensions and loft conversions to complete home transformations —
+                            we handle every stage with precision and care.
+                        </p>
+                    </div>
+
                     <div className={styles.grid}>
                         {servicesList.map((service, index) => (
                             <motion.article
                                 key={service.id}
                                 id={service.id}
                                 className={styles.card}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.4, delay: index * 0.1 }}
+                                transition={{ duration: 0.45, delay: index * 0.08 }}
                             >
-                                <div className={styles.cardHeader}>
-                                    <span className={styles.badge}>{service.badge}</span>
-                                    <h2>{service.title}</h2>
-                                    <p className={styles.tagline}>{service.tagline}</p>
+                                <div className={styles.cardTop}>
+                                    <span className={styles.icon}>{service.icon}</span>
+                                    {service.badge && <span className={styles.badge}>{service.badge}</span>}
                                 </div>
-
-                                <p className={styles.description}>{service.description}</p>
-
-                                <div className={styles.featuresWrapper}>
-                                    <h3>Key Deliverables:</h3>
-                                    <ul className={styles.featureList}>
-                                        {service.features.map((item) => (
-                                            <li key={item}>
-                                                <span className={styles.checkIcon}>✓</span>
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                <div className={styles.cardFooter}>
-                                    <Link href="/contact" className={styles.quoteBtn}>
-                                        Request Quote for {service.title}
-                                    </Link>
-                                </div>
+                                <h3>{service.title}</h3>
+                                <p>{service.description}</p>
+                                <Link href={`/contact?service=${service.id}`} className={styles.readMore}>
+                                    Request Quote →
+                                </Link>
                             </motion.article>
                         ))}
                     </div>
                 </div>
             </section>
 
+            {/* Bottom CTA */}
             <section className={styles.ctaSection}>
                 <div className={styles.container}>
                     <div className={styles.ctaCard}>
-                        <h2>Have a Specific Project in Mind?</h2>
-                        <p>
-                            Contact our Holloway Road office today for expert guidance, on-site surveys, and transparent estimates.
-                        </p>
+                        <div className={styles.ctaText}>
+                            <h2>Ready to Start Your Project?</h2>
+                            <p>
+                                Tell us about your extension, loft conversion or full refurbishment.
+                                We’ll provide clear advice, transparent pricing and a free on-site survey.
+                            </p>
+                        </div>
                         <div className={styles.ctaButtons}>
                             <Link href="/contact" className={styles.primaryBtn}>
-                                Get Your Free Estimate
+                                Get a Free Quote
                             </Link>
-                            <a href="tel:+447393285567" className={styles.secondaryBtn}>
-                                Call +44 7393 285567
+                            <a href="tel:+447393285567" className={styles.outlineBtn}>
+                                Call Us Now
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
-            <Footer/>
+
+            <Footer />
         </main>
     );
 }

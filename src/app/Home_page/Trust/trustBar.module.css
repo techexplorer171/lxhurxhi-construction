@@ -29,7 +29,7 @@
     width: 48px;
     height: 48px;
     border-radius: 12px;
-    background-color: #f7f5f2; /* Light backdrop so dark PNG icons stand out clearly */
+    background-color: #f7f5f2;
     border: 1px solid rgba(217, 165, 45, 0.4); /* Accent Gold Border */
     flex-shrink: 0;
 }

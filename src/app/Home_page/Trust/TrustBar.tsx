@@ -7,6 +7,7 @@ import styles from './trustBar.module.css';
 import Trust22 from './icon/trust-icon.png';
 import Star from './icon/star-rating-icon.png';
 import Map from './icon/map-pin-icon.png';
+
 import Service from './icon/services-plumber-icon.png';
 
 const trustItems = [
@@ -34,7 +35,7 @@ const trustItems = [
 
 const TrustBar = () => {
     return (
-        <section className={styles.trustSection}>
+        <section className={styles.trustSection} >
             <div className={styles.container}>
                 {trustItems.map((item, index) => (
                     <motion.div

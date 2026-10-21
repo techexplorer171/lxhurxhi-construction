@@ -1,122 +1,181 @@
 .footerWrapper {
-    width: 100%;
-    background: #0c1910;
+    background: #0f0f0f;
     color: #ffffff;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 4rem;
 }
 
-.container {
+/* ===== TOP SECTION ===== */
+.topSection {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3.5rem 1.5rem;
+    padding: 0 1.5rem 3rem;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 2.5rem;
+    gap: 3rem;
+    flex-wrap: wrap;
 }
 
-.part1 {
-    flex: 1;
-    min-width: 280px;
+.topLeft h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.75rem;
+}
+
+.topLeft h2 span {
+    color: #a3a3a3;
+}
+
+.emailBox {
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    background: #1a1a1a;
+    border-radius: 50px;
+    overflow: hidden;
+    max-width: 420px;
+    border: 1px solid #333;
 }
 
-.companyTitle {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: #ffffff;
-    letter-spacing: 0.05em;
-}
-
-.tagline {
-    color: #94a3b8;
+.emailBox input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 14px 20px;
+    color: white;
+    outline: none;
     font-size: 0.95rem;
 }
 
-.companyNo {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #f59e0b;
+.emailBox button {
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 0 24px;
+    font-weight: 500;
+    cursor: pointer;
+    border-left: 1px solid #333;
+    transition: background 0.2s;
 }
 
-.contactDetails {
+.emailBox button:hover {
+    background: #f59e0b;
+    color: black;
+}
+
+/* Contact info on the right */
+.topRight {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
-    color: #cbd5e1;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #d4d4d4;
+    font-size: 0.95rem;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+    height: 1px;
+    background: #262626;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== LINKS SECTION ===== */
+.linksSection {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.linkColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.linkColumn h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.linkColumn a,
+.linkColumn p {
+    color: #a3a3a3;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.linkColumn a:hover {
+    color: #f59e0b;
 }
 
 .socialRow {
     display: flex;
-    flex-direction: row;
     gap: 1rem;
-    margin-top: 0.75rem;
+    margin-top: 0.3rem;
 }
 
 .socialRow a {
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0.85;
+    transition: opacity 0.2s, transform 0.2s;
 }
 
 .socialRow a:hover {
+    opacity: 1;
     transform: translateY(-2px);
-    opacity: 0.8;
 }
 
-.part2,
-.part3 {
-    flex: 1;
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-}
-
-.part2 h2,
-.part3 h2 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #f59e0b;
-    margin-bottom: 0.5rem;
-}
-
-.part2 a {
-    text-decoration: none;
-    color: #cbd5e1;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
-}
-
-.part2 a:hover {
-    color: #f59e0b;
-}
-
-.part3 p {
-    color: #cbd5e1;
-    font-size: 0.95rem;
-    margin: 0;
-}
-
+/* ===== COPYRIGHT ===== */
 .copyright {
-    width: 100%;
-    background-color: #020617;
-    padding: 1.25rem 1.5rem;
+    border-top: 1px solid #262626;
+    padding: 1.5rem;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .copyright p {
-    color: #64748b;
+    color: #737373;
     font-size: 0.85rem;
     margin: 0;
 }
 
-@media (max-width: 768px) {
-    .container {
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .linksSection {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .topLeft h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .topSection {
         flex-direction: column;
-        padding: 2.5rem 1.25rem;
+        gap: 2.5rem;
+    }
+
+    .topLeft h2 {
+        font-size: 1.8rem;
+    }
+
+    .linksSection {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .emailBox {
+        max-width: 100%;
     }
 }

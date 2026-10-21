@@ -1,0 +1,18 @@
+<div className={styles.icons}>
+                <div>
+                    <Image
+                        src={Call_icon}
+                        alt="Call icon"
+                        width={40}
+                        height={40}
+                    />
+                    <div>
+                        <h2>Call us!</h2>
+                        <h2>+002939uf</h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+background: linear-gradient(to right, #facc15, #d97706);

@@ -56,11 +56,11 @@ const services: ServiceItem[] = [
 export default function ServicesGrid() {
     const [activeIndex, setActiveIndex] = useState<number>(0);
 
-    // Touch Tracking State
+
     const touchStartX = useRef<number | null>(null);
     const touchEndX = useRef<number | null>(null);
 
-    // Minimum drag distance required to switch cards (in pixels)
+
     const minSwipeDistance = 40;
 
     const handleNext = () => {
@@ -71,7 +71,7 @@ export default function ServicesGrid() {
         setActiveIndex((prev) => (prev - 1 + services.length) % services.length);
     };
 
-    // Touch Handlers for Mobile Swiping
+
     const handleTouchStart = (e: React.TouchEvent) => {
         touchEndX.current = null;
         touchStartX.current = e.targetTouches[0].clientX;
@@ -95,7 +95,7 @@ export default function ServicesGrid() {
         }
     };
 
-    // Helper for card loop positioning
+
     const getCardPosition = (index: number) => {
         const total = services.length;
         const diff = (index - activeIndex + total) % total;
@@ -110,7 +110,7 @@ export default function ServicesGrid() {
         <section className={styles.section}>
             <div className={styles.container}>
 
-                {/* Header */}
+
                 <div className={styles.headerGroup}>
                     <div className={styles.headerBadge}>
                         <span className={styles.badgeDot} />
@@ -122,7 +122,7 @@ export default function ServicesGrid() {
                     </p>
                 </div>
 
-                {/* Swipeable Carousel Container */}
+
                 <div className={styles.carouselStage}>
                     <div
                         className={styles.cardsContainer}
@@ -159,7 +159,7 @@ export default function ServicesGrid() {
                                             ))}
                                         </div>
 
-                                        <a href="#contact" className={styles.ctaButton}>
+                                        <a href="/services" className={styles.ctaButton}>
                                             <span>Explore Specifications</span>
                                             <ArrowUpRight size={16} />
                                         </a>
@@ -169,7 +169,7 @@ export default function ServicesGrid() {
                         })}
                     </div>
 
-                    {/* Controls */}
+
                     <div className={styles.controls}>
                         <button onClick={handlePrev} className={styles.navBtn} aria-label="Previous service">
                             <ChevronLeft size={22} />

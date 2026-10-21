@@ -17,53 +17,76 @@ const socialLinks = [
 const Footer = () => {
     return (
         <footer className={styles.footerWrapper}>
-            <div className={styles.container}>
-                <div className={styles.part1}>
-                    <h2 className={styles.companyTitle}>L XHURXHI CONSTRUCTION LTD</h2>
-                    <p className={styles.tagline}>London-based residential construction & refurbishments.</p>
-                    <span className={styles.companyNo}>Company No: 11537645</span>
+            {/* Top Section */}
+            <div className={styles.topSection}>
+                <div className={styles.topLeft}>
+                    <h2>
+                        Have a Project in Mind?<br />
+                        <span>Let’s Build It.</span>
+                    </h2>
 
-                    <div className={styles.contactDetails}>
-                        <span>📞 +44 20 XXXX XXXX</span>
-                        <span>✉️ info@lxhurxhiconstruction.co.uk</span>
-                    </div>
-
-                    <div className={styles.socialRow}>
-                        {socialLinks.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <Image
-                                    src={item.icon}
-                                    alt={item.name}
-                                    width={24}
-                                    height={24}
-                                />
-                            </Link>
-                        ))}
+                    <div className={styles.emailBox}>
+                        <input type="email" placeholder="Enter your email address..." />
+                        <button>Let’s Talk</button>
                     </div>
                 </div>
 
-                <div className={styles.part2}>
-                    <h2>Links</h2>
+                <div className={styles.topRight}>
+                    <div className={styles.contactItem}>
+                        <span>📞</span>
+                        <span>+44 20 XXXX XXXX</span>
+                    </div>
+                    <div className={styles.contactItem}>
+                        <span>✉️</span>
+                        <span>info@lxhurxhiconstruction.co.uk</span>
+                    </div>
+                    <div className={styles.contactItem}>
+                        <span>📍</span>
+                        <span>London, United Kingdom</span>
+                    </div>
+                </div>
+            </div>
+
+            {/* Divider */}
+            <div className={styles.divider}></div>
+
+            {/* Links Section */}
+            <div className={styles.linksSection}>
+                <div className={styles.linkColumn}>
+                    <h3>Navigation</h3>
                     <Link href="/">Home</Link>
                     <Link href="/about">About</Link>
                     <Link href="/services">Services</Link>
-                    <Link href="/experience">Experience</Link>
+                    <Link href="/privacy">Privacy Page</Link>
                     <Link href="/contact">Contact</Link>
                 </div>
 
-                <div className={styles.part3}>
-                    <h2>Primary Services</h2>
+                <div className={styles.linkColumn}>
+                    <h3>Primary Services</h3>
                     <p>Property Extensions</p>
                     <p>General Building & Trades</p>
                     <p>Home Refurbishments</p>
                     <p>Residential Projects</p>
                 </div>
+
+                <div className={styles.linkColumn}>
+                    <h3>Company</h3>
+                    <p>Company No: 11537645</p>
+                    <p>London-based residential construction & refurbishments.</p>
+                </div>
+
+                <div className={styles.linkColumn}>
+                    <h3>Follow Us</h3>
+                    <div className={styles.socialRow}>
+                        {socialLinks.map((item) => (
+                            <Link key={item.name} href={item.url} target="_blank" rel="noopener noreferrer">
+                                <Image src={item.icon} alt={item.name} width={22} height={22} />
+                            </Link>
+                        ))}
+                    </div>
+                </div>
             </div>
+
 
             <div className={styles.copyright}>
                 <p>© {new Date().getFullYear()} L XHURXHI CONSTRUCTION LTD. All rights reserved.</p>
